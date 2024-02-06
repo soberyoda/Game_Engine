@@ -63,6 +63,7 @@ public class Window {
             IntBuffer pHeight = stack.mallocInt(1);
             glfwGetWindowSize(w, pWidth, pHeight);
             GLFWVidMode vidmode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+            assert vidmode != null;
             glfwSetWindowPos(
                     w,
                     (vidmode.width() - pWidth.get(0)) / 2,
