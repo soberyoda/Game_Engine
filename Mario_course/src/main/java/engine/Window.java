@@ -24,9 +24,9 @@ public class Window {
         return w;
     }
     private Window(){
-        width = 1900;
-        height = 950;
-        title = "Mario";
+        this.width = 1900;
+        this.height = 950;
+        this.title = "Mario";
     }
     public static synchronized Window getInstance(){
         if(Window.window == null){
@@ -55,6 +55,10 @@ public class Window {
         if(w == NULL){
             throw new RuntimeException("Failed to create GLFW window");
         }
+        glfwSetCursorPosCallback(w,MouseListener::cursor_position_callback);
+        glfwSetMouseButtonCallback(w, MouseListener::mouse_button_callback);
+        glfwSetScrollCallback(w, MouseListener::scroll_callback);
+
         glfwSetKeyCallback(w, (w, key, scancode, action, mods) -> {
             if(key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE){
                 glfwSetWindowShouldClose(w, true);
