@@ -20,6 +20,9 @@ public class Window {
     private final String title;
     private static Window window = null;
     private long w;
+    public long getW(){
+        return w;
+    }
     private Window(){
         width = 1920;
         height = 1080;
@@ -40,7 +43,7 @@ public class Window {
         glfwTerminate();
         Objects.requireNonNull(glfwSetErrorCallback(null)).free();
     }
-    private void init(){
+    public void init(){
         GLFWErrorCallback.createPrint(System.err).set();
         if(!glfwInit()){
             throw new IllegalStateException("Unable to initialize GLFW");
@@ -83,4 +86,5 @@ public class Window {
             glfwPollEvents();
         }
     }
+
 }

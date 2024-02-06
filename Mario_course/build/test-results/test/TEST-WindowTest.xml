@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WindowTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-02-06T14:14:49" hostname="LAPTOP-8098K11E" time="1.93">
+  <properties/>
+  <testcase name="init_createsWindow()" classname="WindowTest" time="0.193"/>
+  <testcase name="run_doesNotThrowException()" classname="WindowTest" time="1.725"/>
+  <testcase name="getInstance_returnsSameInstance()" classname="WindowTest" time="0.006"/>
+  <system-out><![CDATA[Hello World
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

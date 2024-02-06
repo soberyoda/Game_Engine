@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Java_engine_with_simple_game.iml" filepath="$PROJECT_DIR$/.idea/Java_engine_with_simple_game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Mario_course.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Mario_course.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Mario_course.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Mario_course.test.iml" />
     </modules>
   </component>
 </project>
