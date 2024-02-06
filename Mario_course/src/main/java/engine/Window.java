@@ -24,8 +24,8 @@ public class Window {
         return w;
     }
     private Window(){
-        width = 1920;
-        height = 1080;
+        width = 1900;
+        height = 950;
         title = "Mario";
     }
     public static synchronized Window getInstance(){
