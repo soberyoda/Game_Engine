@@ -59,12 +59,7 @@ public class Window {
         glfwSetCursorPosCallback(w,MouseListener::cursor_position_callback);
         glfwSetMouseButtonCallback(w, MouseListener::mouse_button_callback);
         glfwSetScrollCallback(w, MouseListener::scroll_callback);
-
-        glfwSetKeyCallback(w, (w, key, scancode, action, mods) -> {
-            if(key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE){
-                glfwSetWindowShouldClose(w, true);
-            }
-        });
+        glfwSetKeyCallback(w, KeyListener::key_callback);
 
         try (MemoryStack stack = stackPush()){
             IntBuffer pWidth = stack.mallocInt(1);
