@@ -27,6 +27,6 @@ public class KeyListener {
         if(keyCode < getInstance().keyPressed.length) {
             return getInstance().keyPressed[keyCode];
         }
-        return false;
+        throw new ArrayIndexOutOfBoundsException();
     }
 }

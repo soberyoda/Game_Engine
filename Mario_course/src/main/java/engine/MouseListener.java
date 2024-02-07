@@ -5,12 +5,11 @@ import lombok.Getter;
 import java.util.ArrayList;
 
 import static org.lwjgl.glfw.GLFW.*;
-
 @Getter
 public class MouseListener {
     private double scrollX, scrollY, xPos, yPos, lastX, lastY;
     private static MouseListener mouseListener = null;
-    private ArrayList<Boolean> mouseButtonPressed = new ArrayList<>(3);
+    private boolean[] mouseButtonPressed = new boolean[3];
     private boolean isDragging;
 
     private MouseListener(){
@@ -33,18 +32,18 @@ public class MouseListener {
         getInstance().lastY = getInstance().yPos;
         getInstance().xPos = xpos;
         getInstance().yPos = ypos;
-        if(!getInstance().mouseButtonPressed.isEmpty()) {
-            getInstance().isDragging = getInstance().mouseButtonPressed.get(0)
-                    || getInstance().mouseButtonPressed.get(1)
-                    || getInstance().mouseButtonPressed.get(2);
+        if(getInstance().mouseButtonPressed.length != 0) {
+            getInstance().isDragging = getInstance().mouseButtonPressed[0]
+                    || getInstance().mouseButtonPressed[1]
+                    || getInstance().mouseButtonPressed[2];
         }
     }
     public static void mouse_button_callback(long window, int button, int action, int mods) {
-        if (button < getInstance().mouseButtonPressed.size()) {
+        if (button < getInstance().mouseButtonPressed.length) {
             if (action == GLFW_PRESS) {
-                getInstance().mouseButtonPressed.add(button, true);
+                getInstance().mouseButtonPressed[button] = true;
             } else if (action == GLFW_RELEASE) {
-                getInstance().mouseButtonPressed.add(button, false);
+                getInstance().mouseButtonPressed[button] = false;
                 getInstance().isDragging = false;
             }
         }
@@ -69,9 +68,31 @@ public class MouseListener {
     }
 
     public static boolean mouseButtonDown(int button) {
-        if (button < getInstance().mouseButtonPressed.size()) {
-            return getInstance().mouseButtonPressed.get(button);
+        if (button < getInstance().mouseButtonPressed.length) {
+            return getInstance().mouseButtonPressed[button];
         }
-        return false;
+        throw new ArrayIndexOutOfBoundsException();
+    }
+    public double getXPos() {
+        return this.xPos;
+    }
+
+    public double getYPos() {
+        return this.yPos;
+    }
+
+    public double getScrollX() {
+        return scrollX;
+    }
+    public double getScrollY(){
+        return scrollY;
+    }
+
+    public double getLastY() {
+        return lastY;
+    }
+
+    public double getLastX() {
+        return lastX;
     }
 }
