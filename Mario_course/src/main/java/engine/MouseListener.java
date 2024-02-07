@@ -33,9 +33,11 @@ public class MouseListener {
         getInstance().lastY = getInstance().yPos;
         getInstance().xPos = xpos;
         getInstance().yPos = ypos;
-        getInstance().isDragging = getInstance().mouseButtonPressed.get(0)
-                || getInstance().mouseButtonPressed.get(1)
-                || getInstance().mouseButtonPressed.get(2);
+        if(!getInstance().mouseButtonPressed.isEmpty()) {
+            getInstance().isDragging = getInstance().mouseButtonPressed.get(0)
+                    || getInstance().mouseButtonPressed.get(1)
+                    || getInstance().mouseButtonPressed.get(2);
+        }
     }
     public static void mouse_button_callback(long window, int button, int action, int mods) {
         if (button < getInstance().mouseButtonPressed.size()) {

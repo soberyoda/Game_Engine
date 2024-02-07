@@ -42,6 +42,7 @@ public class Window {
         glfwDestroyWindow(w);
         glfwTerminate();
         Objects.requireNonNull(glfwSetErrorCallback(null)).free();
+
     }
     public void init(){
         GLFWErrorCallback.createPrint(System.err).set();
