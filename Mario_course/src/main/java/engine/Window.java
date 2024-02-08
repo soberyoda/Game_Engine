@@ -82,6 +82,9 @@ public class Window {
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         while ( !glfwWindowShouldClose(w) ) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
+            if(KeyListener.isKeyPressed(GLFW_KEY_SPACE)){
+                System.out.println("Key space is pressed");
+            }
             glfwSwapBuffers(w);
             glfwPollEvents();
         }

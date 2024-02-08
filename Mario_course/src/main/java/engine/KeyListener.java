@@ -6,7 +6,7 @@ public class KeyListener {
     private static KeyListener keyListener = null;
     private boolean[] keyPressed = new boolean[350];
     private KeyListener(){}
-    private static KeyListener getInstance(){
+    public static KeyListener getInstance(){
         if(KeyListener.keyListener == null){
             KeyListener.keyListener = new KeyListener();
         }
