@@ -22,6 +22,7 @@ public class Window {
     private static Window window = null;
     private long w;
     private static Scene currentScene = null;
+    float r, g, b, a;
     public long getW(){
         return w;
     }
@@ -43,6 +44,10 @@ public class Window {
         this.width = 1900;
         this.height = 950;
         this.title = "Mario";
+        this.r = 1.0f;
+        this.g = 1.0f;
+        this.b = 1.0f;
+        this.a = 1.0f;
     }
     public static synchronized Window getInstance(){
         if(Window.window == null){
@@ -92,21 +97,27 @@ public class Window {
         glfwMakeContextCurrent(w);
         glfwSwapInterval(1);
         glfwShowWindow(w);
+        GL.createCapabilities();
+        Window.changeScene(0);
     }
     private void loop() {
         GL.createCapabilities();
-        glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         float beginTime = Time.getTime();
-        float endTime = Time.getTime();
+        float endTime;
+        float dt = -1.0f;
         while ( !glfwWindowShouldClose(w) ) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
+
+            glClearColor(r,g,b,a);
+            glClear(GL_COLOR_BUFFER_BIT);
+            if(dt > 0) currentScene.update(dt);
             if(KeyListener.isKeyPressed(GLFW_KEY_SPACE)){
                 System.out.println("Key space is pressed");
             }
             glfwSwapBuffers(w);
             glfwPollEvents();
             endTime = Time.getTime();
-            float dt = endTime - beginTime;
+            dt = endTime - beginTime;
             beginTime = endTime;
         }
     }
