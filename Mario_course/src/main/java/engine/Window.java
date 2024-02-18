@@ -10,6 +10,7 @@ import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.system.MemoryStack;
+import util.Time;
 
 import java.nio.IntBuffer;
 import java.util.Objects;
@@ -80,6 +81,8 @@ public class Window {
     private void loop() {
         GL.createCapabilities();
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+        float beginTime = Time.getTime();
+        float endTime = Time.getTime();
         while ( !glfwWindowShouldClose(w) ) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
             if(KeyListener.isKeyPressed(GLFW_KEY_SPACE)){
@@ -87,6 +90,9 @@ public class Window {
             }
             glfwSwapBuffers(w);
             glfwPollEvents();
+            endTime = Time.getTime();
+            float dt = endTime - beginTime;
+            beginTime = endTime;
         }
     }
 
