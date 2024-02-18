@@ -21,8 +21,23 @@ public class Window {
     private final String title;
     private static Window window = null;
     private long w;
+    private static Scene currentScene = null;
     public long getW(){
         return w;
+    }
+    public static void changeScene(int newScene){
+        switch (newScene){
+            case 0:
+                currentScene = new LevelEditorScene();
+                // currentScene.init();
+                break;
+            case 1 :
+                currentScene = new LevelScene();
+                break;
+            default:
+                assert false: "Unknown scene" + newScene + ".";
+                break;
+        }
     }
     private Window(){
         this.width = 1900;
