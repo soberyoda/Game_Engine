@@ -1,12 +1,13 @@
 package engine;
 
+import lombok.Getter;
 import org.lwjgl.opengl.GL20C;
 
 import java.awt.event.KeyEvent;
 
 import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.opengl.GL20C.glCreateShader;
-
+@Getter
 public class LevelEditorScene extends Scene {
     private final String vertexShaderSrc = "#version 330 core\n" +
             "\n" +
@@ -29,6 +30,17 @@ public class LevelEditorScene extends Scene {
             "}";
 
     private int vertexID, fragmentID, shaderProgram;
+
+    public int getVertexID() {
+        return vertexID;
+    }
+    public int getFragmentID(){
+        return fragmentID;
+    }
+
+    public int getShaderProgram(){
+        return shaderProgram;
+    }
 
     public LevelEditorScene(){
 
