@@ -14,7 +14,7 @@ public class LevelEditorSceneTest {
         int fragmentID = scene.getFragmentID();
         int shaderProgram = scene.getShaderProgram();
 
-        int vertexCompileStatus = glGetShaderi(vertexID, GL_COMPILE_STATUS);
+        int vertexCompileStatus = glGetShaderi(vertexID,GL_COMPILE_STATUS);
         int fragmentCompileStatus = glGetShaderi(fragmentID, GL_COMPILE_STATUS);
         int linkStatus = glGetProgrami(shaderProgram, GL_LINK_STATUS);
 
