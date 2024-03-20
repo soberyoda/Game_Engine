@@ -20,7 +20,11 @@ project.ext.lwjglNatives = "natives-windows"
 dependencies {
     implementation 'junit:junit:4.13.2'
     implementation 'junit:junit:4.13.2'
-    implementation 'org.projectlombok:lombok:1.18.26'
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.32'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.32'
     implementation platform("org.lwjgl:lwjgl-bom:$lwjglVersion")
 
     implementation "org.lwjgl:lwjgl"

@@ -1,8 +1,5 @@
 package engine;
-
 import lombok.Getter;
-
-import java.util.ArrayList;
 
 import static org.lwjgl.glfw.GLFW.*;
 @Getter
@@ -11,7 +8,6 @@ public class MouseListener {
     private static MouseListener mouseListener = null;
     private boolean[] mouseButtonPressed = new boolean[3];
     private boolean isDragging;
-
     private MouseListener(){
         this.scrollX = 0.0;
         this.scrollY = 0.0;

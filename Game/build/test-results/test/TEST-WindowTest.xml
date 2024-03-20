@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WindowTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-02-18T13:41:02" hostname="LAPTOP-8098K11E" time="4.776">
+<testsuite name="WindowTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-03-20T20:57:59" hostname="LAPTOP-8098K11E" time="3.888">
   <properties/>
-  <testcase name="init_createsWindow()" classname="WindowTest" time="0.584"/>
-  <testcase name="run_doesNotThrowException()" classname="WindowTest" time="4.185"/>
+  <testcase name="init_createsWindow()" classname="WindowTest" time="0.429"/>
+  <testcase name="run_doesNotThrowException()" classname="WindowTest" time="3.451"/>
   <testcase name="getInstance_returnsSameInstance()" classname="WindowTest" time="0.003"/>
   <system-out><![CDATA[Hello World
 ]]></system-out>
