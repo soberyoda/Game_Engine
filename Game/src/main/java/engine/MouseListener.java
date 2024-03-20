@@ -73,26 +73,5 @@ public class MouseListener {
         }
         throw new ArrayIndexOutOfBoundsException();
     }
-    public double getXPos() {
-        return this.xPos;
-    }
 
-    public double getYPos() {
-        return this.yPos;
-    }
-
-    public double getScrollX() {
-        return scrollX;
-    }
-    public double getScrollY(){
-        return scrollY;
-    }
-
-    public double getLastY() {
-        return lastY;
-    }
-
-    public double getLastX() {
-        return lastX;
-    }
 }
