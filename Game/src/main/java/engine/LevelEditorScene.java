@@ -31,17 +31,6 @@ public class LevelEditorScene extends Scene {
 
     private int vertexID, fragmentID, shaderProgram;
 
-    public int getVertexID() {
-        return vertexID;
-    }
-    public int getFragmentID(){
-        return fragmentID;
-    }
-
-    public int getShaderProgram(){
-        return shaderProgram;
-    }
-
     public LevelEditorScene(){
 
     }
