@@ -44,7 +44,7 @@ public class Window implements Singleton {
     private Window(){
         this.width = 1900;
         this.height = 950;
-        this.title = "Mario";
+        this.title = "Game";
         this.r = 1.0f;
         this.g = 1.0f;
         this.b = 1.0f;
