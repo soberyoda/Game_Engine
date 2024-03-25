@@ -1,11 +1,14 @@
 package engine;
 
+import engine.Interfaces.Singleton;
+
 import static org.lwjgl.glfw.GLFW.*;
 
-public class KeyListener {
+public class KeyListener implements Singleton {
     private static KeyListener keyListener = null;
     private boolean[] keyPressed = new boolean[350];
     private KeyListener(){}
+
     public static KeyListener getInstance(){
         if(KeyListener.keyListener == null){
             KeyListener.keyListener = new KeyListener();

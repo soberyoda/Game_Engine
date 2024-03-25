@@ -5,6 +5,7 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.system.MemoryStack.stackPush;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
+import engine.Interfaces.Singleton;
 import lombok.Getter;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWVidMode;
@@ -16,7 +17,7 @@ import java.nio.IntBuffer;
 import java.util.Objects;
 
 @Getter
-public class Window {
+public class Window implements Singleton {
     private final int width, height;
     private final String title;
     private static Window window = null;

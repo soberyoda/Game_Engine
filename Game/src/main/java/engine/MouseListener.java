@@ -1,9 +1,10 @@
 package engine;
+import engine.Interfaces.Singleton;
 import lombok.Getter;
 
 import static org.lwjgl.glfw.GLFW.*;
 @Getter
-public class MouseListener {
+public class MouseListener implements Singleton {
     private double scrollX, scrollY, xPos, yPos, lastX, lastY;
     private static MouseListener mouseListener = null;
     private boolean[] mouseButtonPressed = new boolean[3];
