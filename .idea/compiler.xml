@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../gradle-8.2.1-bin/gradle-8.2.1/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.32/17d46b3e205515e1e8efd3ee4d57ce8018914163/lombok-1.18.32.jar" />
+        </processorPath>
+        <module name="org.example.Game.test" />
+        <module name="org.example.Game.main" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Mario_course" target="11" />
-      <module name="org.example.Mario_course.main" target="11" />
-      <module name="org.example.Mario_course.test" target="11" />
+      <module name="Game.main" target="11" />
+      <module name="Game.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
