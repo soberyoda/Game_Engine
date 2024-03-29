@@ -1,38 +1,25 @@
 package engine;
 
+import engine.Shaders.ShaderLoader;
 import lombok.Getter;
 import org.lwjgl.opengl.GL20C;
 
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
 import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.opengl.GL20C.glCreateShader;
 @Getter
 public class LevelEditorScene extends Scene {
-    private final String vertexShaderSrc = "#version 330 core\n" +
-            "\n" +
-            "layout (location = 0) in vec3 aPos;\n" +
-            "layout (location = 1) in vec4 aColor;\n" +
-            "out vec4 fColor;\n" +
-            "\n" +
-            "void main(){\n" +
-            "    fColor = aColor;\n" +
-            "    gl_Position = vec4(aPos, 1.0);\n" +
-            "}";
+    private final String vertexShaderSrc;
 
-    private final String fragmentShaderSrc = "#version 330 core\n" +
-            "\n" +
-            "in vec4 fColor;\n" +
-            "out vec4 color;\n" +
-            "\n" +
-            "void main(){\n" +
-            "    color = fColor;\n" +
-            "}";
+    private final String fragmentShaderSrc;
 
     private int vertexID, fragmentID, shaderProgram;
 
-    public LevelEditorScene(){
-
+    public LevelEditorScene() throws IOException {
+        this.vertexShaderSrc = ShaderLoader.loadShader("assets/shaders/vertex_shader.glsl");
+        this.fragmentShaderSrc = ShaderLoader.loadShader("assets/shaders/fragment_shader.glsl");
     }
 
     @Override

@@ -13,6 +13,7 @@ import org.lwjgl.opengl.GL;
 import org.lwjgl.system.MemoryStack;
 import util.Time;
 
+import java.io.IOException;
 import java.nio.IntBuffer;
 import java.util.Objects;
 
@@ -27,7 +28,7 @@ public class Window implements Singleton {
     public long getW(){
         return w;
     }
-    public static void changeScene(int newScene){
+    public static void changeScene(int newScene) throws IOException {
         switch (newScene){
             case 0:
                 currentScene = new LevelEditorScene();
@@ -56,7 +57,7 @@ public class Window implements Singleton {
         }
         return Window.window;
     }
-    public void run(){
+    public void run() throws IOException {
         System.out.println("Hello World");
         init();
         loop();
@@ -66,7 +67,7 @@ public class Window implements Singleton {
         Objects.requireNonNull(glfwSetErrorCallback(null)).free();
 
     }
-    public void init(){
+    public void init() throws IOException {
         GLFWErrorCallback.createPrint(System.err).set();
         if(!glfwInit()){
             throw new IllegalStateException("Unable to initialize GLFW");

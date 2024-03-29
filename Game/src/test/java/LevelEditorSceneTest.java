@@ -2,11 +2,13 @@ import engine.LevelEditorScene;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.lwjgl.opengl.GL20.*;
 
 public class LevelEditorSceneTest {
     @Test
-    public void testShaderCompilationAndLinking(){
+    public void testShaderCompilationAndLinking() throws IOException {
         LevelEditorScene scene = new LevelEditorScene();
         scene.init();
 
