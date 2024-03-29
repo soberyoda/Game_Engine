@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="KeyListenerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-03-26T14:14:48" hostname="LAPTOP-8098K11E" time="0.036">
-  <properties/>
-  <testcase name="testKeyListener()" classname="KeyListenerTest" time="0.036"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

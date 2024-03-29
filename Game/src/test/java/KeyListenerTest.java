@@ -7,7 +7,6 @@ import static org.lwjgl.glfw.GLFW.*;
 public class KeyListenerTest {
     @Test
     void testKeyListener(){
-        KeyListener keyListener = KeyListener.getInstance();
         KeyListener.key_callback(1, GLFW_KEY_SPACE, GLFW_KEY_SPACE, GLFW_PRESS, 0);
         Assertions.assertTrue(KeyListener.isKeyPressed(GLFW_KEY_SPACE));
         KeyListener.key_callback(1, GLFW_KEY_SPACE, GLFW_KEY_SPACE, GLFW_RELEASE, 0);
