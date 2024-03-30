@@ -11,15 +11,20 @@ import static org.lwjgl.opengl.GL20.*;
 import static org.lwjgl.opengl.GL20C.glCreateShader;
 @Getter
 public class LevelEditorScene extends Scene {
-    private final String vertexShaderSrc;
+    private String vertexShaderSrc = null;
 
-    private final String fragmentShaderSrc;
+    private String fragmentShaderSrc = null;
 
     private int vertexID, fragmentID, shaderProgram;
 
     public LevelEditorScene() throws IOException {
-        this.vertexShaderSrc = ShaderLoader.loadShader("assets/shaders/vertex_shader.glsl");
-        this.fragmentShaderSrc = ShaderLoader.loadShader("assets/shaders/fragment_shader.glsl");
+        try {
+            this.vertexShaderSrc = ShaderLoader.loadShader("D:\\Game_Engine\\assets\\shaders\\vertex_shader.glsl");
+            this.fragmentShaderSrc = ShaderLoader.loadShader("D:\\Game_Engine\\assets\\shaders\\fragment_shader.glsl");
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
